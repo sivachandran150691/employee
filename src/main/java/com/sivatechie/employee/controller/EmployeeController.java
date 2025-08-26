@@ -20,11 +20,13 @@ public class EmployeeController {
 private EmployeeRepository employeeRepository;
 
 @PostMapping
+@RequestMapping("/save")
 public Employee saveEmployee(@RequestBody Employee employee) {
 	return employeeRepository.save(employee);
 }
 
 @GetMapping
+@RequestMapping("/list")
 public List<Employee> getAllEmployee(){
 	return employeeRepository.findAll();
 }
